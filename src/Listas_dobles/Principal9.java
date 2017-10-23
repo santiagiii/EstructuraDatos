@@ -11,7 +11,8 @@ public class Principal9 {
 	public static void main(String[] args) {
 		//inico d e variables
 		ListaDoble listita=new ListaDoble();
-		int opcion=0,elemento;
+		int opcion=0;
+		String elemento;
 		do {
 			try {//exxepcion
 				
@@ -20,19 +21,20 @@ public class Principal9 {
 					   +"2. Agregar un Nodo al Final \n"
 					   +"3. Mostrar la lista de  inicio a Fin \n"
 					   +"4. Mostrar la lista de Fin a Inicio\n "
-					   +"5. Salir\n "
+					   +"5. Eliminar el nodo de inicio\n"
+					   +"6. eliminar nodo del final\n"
+					   +"7. Salir\n "
 					   +"Que deseas Hacer?","Menu de Opciones",JOptionPane.INFORMATION_MESSAGE));
 				switch(opcion) 
 				{
 				case 1:
-					elemento=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el valor de el nodo"
-					,"Agregar nodos al inicio",JOptionPane.INFORMATION_MESSAGE));
+					elemento=JOptionPane.showInputDialog("Ingresa el valor de el nodo");
+					
 					listita.agragaralInicio(elemento);			
 					break;
 				case 2:
-					elemento=Integer.parseInt(JOptionPane.showInputDialog(
-							null,"ingresa el elemento  del nodo","agregando nodo al final",
-						JOptionPane.INFORMATION_MESSAGE));	
+					elemento=JOptionPane.showInputDialog("ingresa el elemento  del nodo");
+					
 					listita.agragarFinal(elemento);
 					
 					break;
@@ -56,10 +58,38 @@ public class Principal9 {
 						JOptionPane.showInputDialog(
 								null,"NO HAY NODOS AUN","LISTA VACIA!",
 							JOptionPane.INFORMATION_MESSAGE);
-						
 					}
-					break;  
+					break;
+					
 				case 5:
+					if(!listita.estVacia()) 
+					{
+						elemento=listita.eliminarDelinicio();
+						JOptionPane.showInputDialog(
+								null,"El elemento eliminado es del ini:"+elemento,
+							JOptionPane.INFORMATION_MESSAGE);
+					}else {
+						JOptionPane.showInputDialog(
+								null,"NO HAY NODOS AUN","LISTA VACIA!",
+							JOptionPane.INFORMATION_MESSAGE);
+					}
+					break;
+				case 6:
+					if(!listita.estVacia()) 
+					{
+						elemento=listita.eliminarDelfinal();
+						JOptionPane.showInputDialog(
+								null,"El elemento eliminado es del fin :"+elemento,
+							JOptionPane.INFORMATION_MESSAGE);
+					}else {
+						JOptionPane.showInputDialog(
+								null,"NO HAY NODOS AUN","LISTA VACIA!",
+							JOptionPane.INFORMATION_MESSAGE);
+					}
+					break;
+					
+					
+				case 7:
 					JOptionPane.showMessageDialog(null,"Aplicacion Finalizada :v GRACIAS!"
 					,null, JOptionPane.INFORMATION_MESSAGE);
 					break;
@@ -77,7 +107,7 @@ public class Principal9 {
 			
 			
 			
-		}while(opcion!=5);
+		}while(opcion!=7);
 		
 		
 

@@ -15,11 +15,11 @@ public class ListaDoble {
 		return inicio==null;
 	}
 	//metodo para agregar nodos al final
-	public void agragarFinal(int el) 
+	public void agragarFinal(String el) 
 	{
 		if(!estVacia())
 		{
-			fin=new NodoDoble(el, null, fin);
+			fin=new NodoDoble(el,null,fin);
 			fin.anterior.siguiente=fin;
 		}else {
 			inicio=fin=new NodoDoble(el);
@@ -27,7 +27,7 @@ public class ListaDoble {
 		
 	}
 	///mtodo para agregar al inicio
-	public void agragaralInicio(int el) 
+	public void agragaralInicio(String el) 
 	{
 		if(!estVacia())
 		{
@@ -77,7 +77,34 @@ public class ListaDoble {
 				}
 				
 			}
+			
+			
 	}
-	
+		//metodo para eliminar
+		public String eliminarDelinicio() 
+		{
+			String elemento=inicio.dato;
+			if(inicio==fin) 
+			{
+				inicio=fin=null;
+			}else {
+				inicio=inicio.siguiente;
+				inicio.anterior=null;
+			}
+			return elemento;
+		}
+	//metodo eliminar fnl
+		public String eliminarDelfinal()
+		{
+			String elemento=inicio.dato;
+			if(inicio==fin) 
+			{
+				inicio=fin=null;
+			}else { 
+				fin=fin.anterior;
+				fin.siguiente=null;
+			}
+			return elemento;
+		}
 }
 

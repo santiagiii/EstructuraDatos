@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
 
 public class Listas extends JFrame {
 
@@ -48,63 +49,49 @@ public class Listas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnAplicar = new JButton("Aplicar");
-		btnAplicar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnAplicar.setBounds(160, 83, 89, 23);
-		contentPane.add(btnAplicar);
-		
 		JLabel lblMenu = new JLabel("MENU DE OPCIONES");
-		lblMenu.setForeground(Color.BLACK);
-		lblMenu.setBounds(63, 28, 149, 14);
+		lblMenu.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
+		lblMenu.setForeground(Color.CYAN);
+		lblMenu.setBounds(63, 28, 262, 14);
 		contentPane.add(lblMenu);
 		
 		JButton btnEntrar = new JButton("Entrar");//boton con instancia 
 		btnEntrar.addMouseListener(new MouseAdapter() {
-			Principal9 p=new  Principal9();
+			//llamando a clase
+			Listadobleenlazada en=new Listadobleenlazada();
+			
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				Principal9 p=new  Principal9();
+				
+				
 			}
 		});
 		
 		btnEntrar.addActionListener(new ActionListener() {
 			Principal9 p=new  Principal9();
 			public void actionPerformed(ActionEvent arg0) {
-				Principal9 p=new  Principal9();
+				Listadobleenlazada en=new Listadobleenlazada();
+				en.main(null);
+				
 			}
 		});
-		btnEntrar.setBounds(160, 49, 89, 23);
+		btnEntrar.setBounds(236, 51, 89, 23);
 		contentPane.add(btnEntrar);
 		
-		JLabel lblNodoSimple = new JLabel("Insertar Nodo Simple");
-		lblNodoSimple.setBounds(10, 53, 121, 14);
+		JLabel lblNodoSimple = new JLabel("LISTA DOBLE ENLAZADA");
+		lblNodoSimple.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNodoSimple.setForeground(Color.CYAN);
+		lblNodoSimple.setBounds(10, 53, 187, 14);
 		contentPane.add(lblNodoSimple);
 		
 		JLabel lblListaDoblementeEnlazadas = new JLabel("LISTA DOBLEMENTE ENLAZADAS");
 		lblListaDoblementeEnlazadas.setBounds(40, 11, 209, 14);
 		contentPane.add(lblListaDoblementeEnlazadas);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(20, 86, 46, 14);
-		contentPane.add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(160, 117, 89, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(160, 162, 89, 23);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(160, 203, 89, 23);
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("New button");
-		btnNewButton_3.setBounds(160, 249, 89, 23);
-		contentPane.add(btnNewButton_3);
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\silerio\\Pictures\\Razer.jpg"));
+		label.setBounds(-13, 0, 502, 469);
+		contentPane.add(label);
 	}
 }

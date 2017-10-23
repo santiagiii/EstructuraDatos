@@ -2,18 +2,17 @@ package Listas_dobles;
 
 public class NodoDoble {
 
-	
-//inicializacion de varibles
-	//constructor para cuando no hay  nodos
-	
-	public NodoDoble(int el) 
+	public NodoDoble(String el) 
 	{
 		this(el,null,null);
 	}
-		public int dato;
+	
+	public  String dato;
+	
+	
 		NodoDoble siguiente,anterior;
 		//constructoe para cuando hay nodos
-		public NodoDoble(int el,NodoDoble s,NodoDoble a) 
+		public NodoDoble(String el,NodoDoble s,NodoDoble a) 
 		{
 			dato=el;
 			siguiente=s;
